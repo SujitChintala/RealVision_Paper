@@ -8,3 +8,4 @@ __pycache__/
 .env
 *.pyc
 node_modules/
+checkpoints\best_model.pth
