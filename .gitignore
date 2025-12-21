@@ -1,0 +1,10 @@
+data
+data/*
+data/
+.data/
+.data*
+venv/
+__pycache__/
+.env
+*.pyc
+node_modules/
