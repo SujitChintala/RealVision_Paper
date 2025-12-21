@@ -9,3 +9,4 @@ __pycache__/
 *.pyc
 node_modules/
 checkpoints\best_model.pth
+checkpoints\checkpoint_epoch_10.pth
