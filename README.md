@@ -32,7 +32,19 @@ data/
 
 ## Usage
 
-### 1. Train the Model
+### 1. Launch the Web Application (Recommended)
+
+```bash
+streamlit run app.py
+```
+
+This will open a clean web interface where you can:
+- Upload images for real-time classification
+- View confidence scores and probability breakdowns
+- See model performance metrics and visualizations
+- Access detailed model information
+
+### 2. Train the Model
 
 ```bash
 python train_realvision.py
