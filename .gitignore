@@ -8,6 +8,6 @@ __pycache__/
 .env
 *.pyc
 node_modules/
-checkpoints\best_model.pth
+checkpoints/best_model.pth
 checkpoints\checkpoint_epoch_10.pth
 checkpoints\checkpoint_epoch_5.pth
