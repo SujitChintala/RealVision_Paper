@@ -76,6 +76,7 @@ st.markdown("""
         border-radius: 12px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         height: 100%;
+        padding-top: 1.5rem;
     }
     
     .card-title {
@@ -84,6 +85,7 @@ st.markdown("""
         color: #1a1a1a;
         margin-bottom: 0.2rem;
         margin-top: 0;
+        padding-top: 0;
     }
     
     .card-subtitle {
@@ -321,7 +323,6 @@ def main():
     
     # Left column - Upload section
     with col1:
-        st.markdown('<div class="upload-card">', unsafe_allow_html=True)
         st.markdown('<div class="card-title">Upload Image</div>', unsafe_allow_html=True)
         st.markdown('<div class="card-subtitle">Drop your image here or click to browse</div>', unsafe_allow_html=True)
         
