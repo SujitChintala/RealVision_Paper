@@ -111,6 +111,13 @@ st.markdown("""
     .stImage {
         border-radius: 8px;
         margin-bottom: 0.8rem;
+        max-height: 350px;
+    }
+    
+    .stImage img {
+        max-height: 350px;
+        object-fit: contain;
+        width: 100%;
     }
     
     /* Top match result */
