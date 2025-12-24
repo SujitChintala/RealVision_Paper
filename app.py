@@ -40,8 +40,8 @@ st.markdown("""
     
     /* Remove default padding */
     .block-container {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
         max-width: 100% !important;
     }
     
@@ -52,55 +52,55 @@ st.markdown("""
     
     /* Title styling */
     .main-title {
-        font-size: 2.8rem;
+        font-size: 2rem;
         font-weight: 600;
         text-align: center;
         color: #1a1a1a;
-        margin-top: 0.5rem;
-        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.1rem;
         letter-spacing: -0.02em;
     }
     
     .subtitle {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         text-align: center;
         color: #6c757d;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.8rem;
         font-weight: 400;
     }
     
     /* Card styling */
     .upload-card, .results-card {
         background: white;
-        padding: 1.5rem;
+        padding: 1rem;
         border-radius: 12px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         height: 100%;
-        padding-top: 1.5rem;
+        padding-top: 1rem;
     }
     
     .card-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 600;
         color: #1a1a1a;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
         margin-top: 0;
         padding-top: 0;
     }
     
     .card-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         color: #8e9199;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     
     /* File uploader styling */
     .stFileUploader {
-        padding: 1rem;
+        padding: 0.8rem;
         border: 2px dashed #d1d5db;
         border-radius: 8px;
         background-color: #fafbfc;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
     }
     
     .stFileUploader > div > div {
@@ -110,12 +110,12 @@ st.markdown("""
     /* Image styling */
     .stImage {
         border-radius: 8px;
-        margin-bottom: 0.8rem;
-        max-height: 350px;
+        margin-bottom: 0.5rem;
+        max-height: 250px;
     }
     
     .stImage img {
-        max-height: 350px;
+        max-height: 250px;
         object-fit: contain;
         width: 100%;
     }
@@ -124,9 +124,9 @@ st.markdown("""
     .top-match-card {
         background: #2d3748;
         color: white;
-        padding: 1.3rem;
+        padding: 1rem;
         border-radius: 10px;
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.8rem;
     }
     
     .top-match-label {
@@ -139,9 +139,9 @@ st.markdown("""
     }
     
     .top-match-result {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: 600;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.4rem;
         color: white;
     }
     
@@ -161,7 +161,7 @@ st.markdown("""
     }
     
     .confidence-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
         text-align: right;
         color: white;
@@ -169,17 +169,17 @@ st.markdown("""
     
     /* Other predictions */
     .other-predictions-title {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         font-weight: 600;
         color: #1a1a1a;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
     }
     
     .prediction-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.7rem 0;
+        padding: 0.4rem 0;
         border-bottom: 1px solid #f0f0f0;
     }
     
@@ -202,9 +202,9 @@ st.markdown("""
     .custom-footer {
         text-align: center;
         color: #718096;
-        font-size: 0.82rem;
-        margin-top: 1.5rem;
-        padding: 1rem 0;
+        font-size: 0.72rem;
+        margin-top: 0.8rem;
+        padding: 0.5rem 0;
     }
     
     .custom-footer a {
