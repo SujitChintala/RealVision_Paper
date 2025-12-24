@@ -333,10 +333,15 @@ def main():
         st.markdown('<div class="card-title">Upload Image</div>', unsafe_allow_html=True)
         st.markdown('<div class="card-subtitle">Drop your image here or click to browse</div>', unsafe_allow_html=True)
         
+        # Initialize file uploader key in session state
+        if 'file_uploader_key' not in st.session_state:
+            st.session_state.file_uploader_key = 0
+        
         uploaded_file = st.file_uploader(
             "Choose an image",
             type=['png', 'jpg', 'jpeg'],
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key=f"file_uploader_{st.session_state.file_uploader_key}"
         )
         
         if uploaded_file is not None:
@@ -349,7 +354,9 @@ def main():
             
             col_a, col_b = st.columns(2)
             with col_a:
-                if st.button("🔄 Change Image", use_container_width=True):
+                if st.button("🔄 Change Image", use_container_width=True, key="change_image_btn"):
+                    # Clear the uploaded file by incrementing the key
+                    st.session_state.file_uploader_key += 1
                     st.session_state.prediction_made = False
                     st.rerun()
             with col_b:
