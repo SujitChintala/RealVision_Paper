@@ -359,7 +359,6 @@ def main():
     
     # Right column - Results section
     with col2:
-        st.markdown('<div class="results-card">', unsafe_allow_html=True)
         st.markdown('<div class="card-title">Recognition Results</div>', unsafe_allow_html=True)
         st.markdown('<div class="card-subtitle">AI-powered predictions with confidence scores</div>', unsafe_allow_html=True)
         
