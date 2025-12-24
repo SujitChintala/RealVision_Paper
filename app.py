@@ -389,25 +389,17 @@ def main():
             </div>
             """, unsafe_allow_html=True)
             
-            # Other predictions
-            st.markdown('<div class="other-predictions-title">Other Predictions</div>', unsafe_allow_html=True)
+            # Show the other prediction (not the top match)
+            other_class = 1 - predicted_class
+            other_label = class_names[other_class]
+            other_prob = float(probabilities[other_class] * 100)
             
-            # Show both probabilities
-            predictions_list = [
-                ('AI-Generated', float(probabilities[0] * 100)),
-                ('Real Image', float(probabilities[1] * 100))
-            ]
-            
-            # Sort by confidence
-            predictions_list.sort(key=lambda x: x[1], reverse=True)
-            
-            for idx, (label, prob) in enumerate(predictions_list[1:], start=2):
-                st.markdown(f"""
-                <div class="prediction-item">
-                    <span class="prediction-label">{idx}. {label}</span>
-                    <span class="prediction-confidence">{prob:.2f}%</span>
-                </div>
-                """, unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="prediction-item">
+                <span class="prediction-label">{other_label}</span>
+                <span class="prediction-confidence">{other_prob:.2f}%</span>
+            </div>
+            """, unsafe_allow_html=True)
         else:
             st.info("Upload an image and click 'Analyze Image' to see results")
         
