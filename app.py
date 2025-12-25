@@ -316,7 +316,7 @@ def predict(model, image, device):
 def main():
     # Header
     st.markdown('<div class="main-title">RealVision</div>', unsafe_allow_html=True)
-    st.markdown('<div class="subtitle">Powered by ResNet-18 • Deep Learning</div>', unsafe_allow_html=True)
+    st.markdown('<div class="subtitle">Powered by ResNet-18  •  Deep Learning</div>', unsafe_allow_html=True)
     
     # Load model
     model, device, checkpoint = load_model()
