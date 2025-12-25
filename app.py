@@ -380,10 +380,12 @@ def main():
             image = Image.open(uploaded_file).convert('RGB')
             
             # Display image with X button overlay
-            st.markdown('<div class="image-container">', unsafe_allow_html=True)
+            st.markdown("""
+            <div class="image-container">
+                <button class="image-x-button" onclick="return false;">✕</button>
+            </div>
+            """, unsafe_allow_html=True)
             st.image(image, use_container_width=True)
-            st.markdown('<button class="image-x-button" onclick="return false;">✕</button>', unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
             
             # Store prediction in session state
             if 'prediction_made' not in st.session_state:
