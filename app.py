@@ -120,6 +120,38 @@ st.markdown("""
         width: 100%;
     }
     
+    /* Image container with X button */
+    .image-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .image-x-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        z-index: 1000;
+        font-weight: 600;
+    }
+    
+    .image-x-button:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: scale(1.1);
+    }
+    
     /* Top match result */
     .top-match-card {
         background: #2d3748;
@@ -346,7 +378,12 @@ def main():
         
         if uploaded_file is not None:
             image = Image.open(uploaded_file).convert('RGB')
+            
+            # Display image with X button overlay
+            st.markdown('<div class="image-container">', unsafe_allow_html=True)
             st.image(image, use_container_width=True)
+            st.markdown('<button class="image-x-button" onclick="return false;">✕</button>', unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
             
             # Store prediction in session state
             if 'prediction_made' not in st.session_state:
