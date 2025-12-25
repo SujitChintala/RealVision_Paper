@@ -127,29 +127,37 @@ st.markdown("""
         width: 100%;
     }
     
-    .image-x-button {
+    /* Style the X button as overlay */
+    .stButton.x-button-container {
         position: absolute;
         top: 8px;
         right: 8px;
-        width: 28px;
-        height: 28px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        border: none;
-        border-radius: 50%;
+        z-index: 1000;
+        margin: 0;
+    }
+    
+    .stButton.x-button-container > button {
+        width: 28px !important;
+        height: 28px !important;
+        min-height: 28px !important;
+        padding: 0 !important;
+        background-color: rgba(0, 0, 0, 0.7) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50% !important;
         cursor: pointer;
-        font-size: 16px;
-        display: flex;
+        font-size: 16px !important;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         transition: all 0.2s;
-        z-index: 1000;
         font-weight: 600;
     }
     
-    .image-x-button:hover {
-        background-color: rgba(0, 0, 0, 0.9);
+    .stButton.x-button-container > button:hover {
+        background-color: rgba(0, 0, 0, 0.9) !important;
         transform: scale(1.1);
+        border: none !important;
     }
     
     /* Top match result */
@@ -380,12 +388,46 @@ def main():
             image = Image.open(uploaded_file).convert('RGB')
             
             # Display image with X button overlay
+            st.markdown('<div class="image-container">', unsafe_allow_html=True)
+            
+            # Create X button overlay with functionality
+            x_button_col = st.container()
+            with x_button_col:
+                if st.button("✕", key="x_button", help="Remove image"):
+                    st.session_state.file_uploader_key += 1
+                    st.session_state.prediction_made = False
+                    st.rerun()
+            
+            # Add custom class to the button
             st.markdown("""
-            <div class="image-container">
-                <button class="image-x-button" onclick="return false;">✕</button>
-            </div>
+            <style>
+                div[data-testid="stVerticalBlock"] > div:has(button[kind="secondary"][aria-label="Remove image"]) {
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    z-index: 1000;
+                }
+                div[data-testid="stVerticalBlock"] > div:has(button[kind="secondary"][aria-label="Remove image"]) button {
+                    width: 28px !important;
+                    height: 28px !important;
+                    min-height: 28px !important;
+                    padding: 0 !important;
+                    background-color: rgba(0, 0, 0, 0.7) !important;
+                    color: white !important;
+                    border: none !important;
+                    border-radius: 50% !important;
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+                div[data-testid="stVerticalBlock"] > div:has(button[kind="secondary"][aria-label="Remove image"]) button:hover {
+                    background-color: rgba(0, 0, 0, 0.9) !important;
+                    transform: scale(1.1);
+                }
+            </style>
             """, unsafe_allow_html=True)
+            
             st.image(image, use_container_width=True)
+            st.markdown('</div>', unsafe_allow_html=True)
             
             # Store prediction in session state
             if 'prediction_made' not in st.session_state:
