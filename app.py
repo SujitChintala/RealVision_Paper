@@ -416,7 +416,7 @@ def main():
     st.markdown("""
     <div class="custom-footer">
         Built using PyTorch & ResNet-18<br>
-        Trained on balanced dataset • Binary classification<br>
+        Trained on balanced dataset  •  Binary classification<br>
         <a href="https://github.com" target="_blank">View on GitHub</a>
     </div>
     """, unsafe_allow_html=True)
