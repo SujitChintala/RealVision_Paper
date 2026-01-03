@@ -78,7 +78,7 @@ REAL Class:
 DEPLOYMENT:
 ----------
 - Web Application: Streamlit
-- Interface: Clean, two-column layout
+- Interface: Clean, simple, two-column layout
 - Features:
   * Image upload
   * Real-time classification
