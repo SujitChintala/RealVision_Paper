@@ -53,7 +53,7 @@ EVALUATION METRICS:
 ------------------
 - Accuracy: 92.16%
 - Precision: 92.18%
-- Recall: 92.16%
+- Recall: 92.19%
 - F1-Score: 92.15%
 - Test Samples: 20,000
 
