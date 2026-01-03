@@ -32,7 +32,7 @@ TRAINING CONFIGURATION:
 - Batch Size: 64
 - Epochs: 10
 - Learning Rate Scheduler: StepLR (step_size=7, gamma=0.1)
-- Device: CPU (works on GPU if available)
+- Device: CPU (works most efficiently on GPU if available)
 
 DATA PREPROCESSING:
 ------------------
